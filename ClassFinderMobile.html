@@ -50,8 +50,8 @@
 
       img.helpers
       {
-        height: 40%;
-        width: 40%;
+        height: 25%;
+        width: 25%;
       }
 
       a
@@ -66,7 +66,7 @@
         <section id="tools">
       <p>Search Below</p>
       <label for="room">Room #
-        <input type="text" name="room" id="room">
+        <input type="text" name="room" id="room" onkeypress= "PressEnter(event)">
       </label>
       <button id="submit" onclick="DoSearch()">Submit</button>
       <p>
@@ -93,6 +93,15 @@
         var rooms;
         var infoWindow;
         
+        function PressEnter(e)
+        {
+            if(e.keyCode === 13)
+            {
+                DoSearch();
+            }
+            return false;
+        }
+
 
         function GoBuildA()
         {
@@ -251,7 +260,6 @@
           '<div id="bodyContent">'+
           '<p>Three Entrances to this building.</p>'+
           '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
-          '<p>Secondary Front</p><p> <img class="helpers" src="Assets/4A_Entrance_2.jpg"></p>'+
           '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
           '</div>'+
           '</div>'}),
@@ -261,29 +269,47 @@
           "fs4a-135" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139',
+        title: '4A Room 135',
         content: '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">4A - Room 102</h1>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 135</h1>'+
           '<div id="bodyContent">'+
           '<p>Three Entrances to this building.</p>'+
-          '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
-          '<p>Secondary Front</p><p> <img class="helpers" src="Assets/4A_Entrance_2.jpg"></p>'+
-          '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
           '</div>'+
           '</div>'}),
 
           "fs4a-138" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139'}),
+        title: '4A Room 138',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 138</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance_1.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
           "fs4a-139" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139'})
-
+        title: '4A Rooms 139',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 139</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance_1.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'})
          };
 
 
