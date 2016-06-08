@@ -50,8 +50,8 @@
 
       img.helpers
       {
-        height: 25%;
-        width: 25%;
+        height: 40%;
+        width: 70%;
       }
 
       a
@@ -66,7 +66,7 @@
         <section id="tools">
       <p>Search Below</p>
       <label for="room">Room #
-        <input type="text" name="room" id="room" onkeypress= "PressEnter(event)">
+        <input type="text" name="room" id="room" onkeypress="PressEnter(event)">
       </label>
       <button id="submit" onclick="DoSearch()">Submit</button>
       <p>
@@ -126,7 +126,12 @@
             var found = rooms[userinput.toLowerCase()];
             if(found)
             {
-              infoWindow = new google.maps.InfoWindow({content: rooms[userinput.toLowerCase()].content});
+              infoWindow = new google.maps.InfoWindow(
+                {
+                  content: rooms[userinput.toLowerCase()].content,
+                  maxWidth: 150
+               });
+              infoWindow.
               infoWindow.open(map, rooms[userinput.toLowerCase()])
               console.log("Something was found, its :" +found);
               DoMove(found.position);
@@ -318,63 +323,72 @@
 
          rooms["fs4g-101"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-101"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-101"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4g-101"]);
          });
 
          rooms["fs4g-103"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-103"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-103"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4g-103"]);
          });
 
          rooms["fs4a-102"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-102"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-102"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-102"]);
          });
 
          rooms["fs4a-103"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-103"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-103"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-103"]);
          });
 
          rooms["fs4a-106"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-106"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-106"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-106"]);
          });
 
          rooms["fs4a-108"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-108"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-108"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-108"]);
          });
 
          rooms["fs4a-135"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-135"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-135"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-135"]);
          });
 
           rooms["fs4a-138"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-138"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-138"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-138"]);
          });
 
          rooms["fs4a-139"].addListener('click' ,function() 
          {
-            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-139"].content});
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-139"].content,
+                  maxWidth: 150});
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-139"]);
          });
