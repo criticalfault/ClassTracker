@@ -46,6 +46,12 @@
         height: 70px;
       }
 
+      img.helpers
+      {
+        height: 25%;
+        width: 25%;
+      }
+
       a
       {
         text-decoration: underline;
@@ -59,7 +65,7 @@
     <section id="tools">
       <p>Search Below</p>
       <label for="room">Room #
-        <input type="text" name="room" id="room">
+        <input type="text" name="room" id="room" onkeypress="PressEnter(event)">
       </label>
       <button id="submit" onclick="DoSearch()">Submit</button>
       <p>
@@ -84,6 +90,15 @@
         var rooms;
         var infoWindow;
         
+
+        function PressEnter(e)
+        {
+            if(e.keyCode === 13)
+            {
+                DoSearch();
+            }
+            return false;
+        }
 
         function GoBuildA()
         {
@@ -149,6 +164,7 @@
         */
         rooms = {
 
+         
           "fs4g-103" : new google.maps.Marker({
         position: {lat: 28.590308, lng: -81.305318},
         map: map,        
@@ -156,11 +172,13 @@
         content: '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Rooms 101 & 103</h1>'+
+          '<h1 id="firstHeading" class="firstHeading">4G - Rooms 101 & 103</h1>'+
           '<div id="bodyContent">'+
-          '<p>This is a test listener, will this work? Who knows </p>'+
+          '<p>Two Entrances to this building.</p>'+
+          '<p>Front <img class="helpers" src="Assets/4G_Entrance.jpg"></p>'+
+          '<p>Rear <img <img class="helpers" src="Assets/4G_Rear_Entrance.jpg"></p>'+
           '</div>'+
-          '</div>'}), 
+          '</div>'}),  
 
           "fs4g-101" : new google.maps.Marker({
         position: {lat: 28.590308, lng: -81.305318},
@@ -169,9 +187,11 @@
         content: '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Rooms 101 & 103</h1>'+
+          '<h1 id="firstHeading" class="firstHeading">4G - Rooms 101 & 103</h1>'+
           '<div id="bodyContent">'+
-          '<p>This is a test listener, will this work? Who knows </p>'+
+          '<p>Two Entrances to this building.</p>'+
+          '<p>Front <img class="helpers" src="Assets/4G_Entrance.jpg"></p>'+
+          '<p>Rear <img <img class="helpers" src="Assets/4G_Rear_Entrance.jpg"></p>'+
           '</div>'+
           '</div>'}), 
 
@@ -180,52 +200,181 @@
           "fs4a-102" : new google.maps.Marker({
         position: {lat: 28.59282786, lng: -81.30535165},
         map: map,
-        title: '4A Room-102'}),
+        title: '4A Room-102',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 102</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
+          '<p>Secondary Front</p><p> <img class="helpers" src="Assets/4A_Entrance_2.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}), 
 
 
                       //28.592797, -81.305181
           "fs4a-103" : new google.maps.Marker({
         position: {lat: 28.592797, lng: -81.305181},
         map: map,
-        title: '4A Rooms 103, 106, 108'}),
+        title: '4A Room 103',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 103</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
+          '<p>Secondary Front</p><p> <img class="helpers" src="Assets/4A_Entrance_2.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
           "fs4a-106" : new google.maps.Marker({
         position: {lat: 28.5927971, lng: -81.3051811},
         map: map,
-        title: '4A Rooms 103, 106, 108'}),
+        title: '4A Room 106',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 106</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
+          '<p>Secondary Front</p><p> <img class="helpers" src="Assets/4A_Entrance_2.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
           "fs4a-108" : new google.maps.Marker({
         position: {lat: 28.592797, lng: -81.305181},
         map: map,
-        title: '4A Rooms 103, 106, 108'}),
+        title: '4A Room 108',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 108</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_Entrance_1.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
 
             //28.592225, -81.304248
           "fs4a-135" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139'}),
+        title: '4A Room 135',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 135</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
           "fs4a-138" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139'}),
+        title: '4A Room 138',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 138</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'}),
 
           "fs4a-139" : new google.maps.Marker({
         position: {lat: 28.592225, lng: -81.304248},
         map: map,
-        title: '4A Rooms 135, 138, 139'})
-
+        title: '4A Rooms 139',
+        content: '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">4A - Room 139</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Three Entrances to this building.</p>'+
+          '<p>Front</p><p><img class="helpers" src="Assets/4A_136_Entrance.jpg"></p>'+
+          '<p>Rear </p><p><img class="helpers" src="Assets/4A_136_Rear_Entrance.jpg"></p>'+
+          '</div>'+
+          '</div>'})
          };
 
 
          infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-101"].content});
 
 
-         rooms["fs4g-101"].addListener('click' ,function() 
+                  rooms["fs4g-101"].addListener('click' ,function() 
          {
-          console.log("pop");
-          infoWindow.open(map, rooms["fs4g-101"]);
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-101"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4g-101"]);
+         });
+
+         rooms["fs4g-103"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4g-103"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4g-103"]);
+         });
+
+         rooms["fs4a-102"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-102"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-102"]);
+         });
+
+         rooms["fs4a-103"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-103"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-103"]);
+         });
+
+         rooms["fs4a-106"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-106"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-106"]);
+         });
+
+         rooms["fs4a-108"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-108"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-108"]);
+         });
+
+         rooms["fs4a-135"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-135"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-135"]);
+         });
+
+          rooms["fs4a-138"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-138"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-138"]);
+         });
+
+         rooms["fs4a-139"].addListener('click' ,function() 
+         {
+            infoWindow = new google.maps.InfoWindow({content: rooms["fs4a-139"].content});
+            console.log("pop");
+            infoWindow.open(map, rooms["fs4a-139"]);
          });
 
         }
