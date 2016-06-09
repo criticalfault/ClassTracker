@@ -8,6 +8,7 @@
     <style>
       html, body 
       {
+        font-family: helvetica;
         height: 100%;
         width: 100%;
         margin: 0;
@@ -77,8 +78,9 @@
       </div>
       
       <div id="tools">
-        <p>Search Below</p>
-        <label for="room">Room #
+        <p>Enter your Room ID found on your "View my stuff" on FSO</p>
+        <p>Example: FS4G-103</p>
+        <label for="room">
           <input type="text" name="room" id="room" onkeypress="PressEnter(event)">
         </label>
         <button id="submit" onclick="DoSearch()">Submit</button>
