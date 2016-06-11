@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>Fullsail Class Finder</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
     <style>
       html, body 
       {
@@ -28,8 +27,8 @@
         position: relative;
         display: inline-block;
         height: 90%;
-        width: 90%;
-        margin: 0 5%;
+        width: 80%;
+        margin: 0 10%;
 
       }
 
@@ -95,6 +94,14 @@
         height: 70px;
       }
 
+      #result
+      {
+        display: inline-block;
+        height: 30%;
+        width: 80%;
+        margin: 0 10%;
+      }
+
       ul
       {
         padding: 0;
@@ -123,8 +130,8 @@
 
       img
       {
-        width: 35%;
-        height: 35%;
+        width: 80%;
+        height: 60%;
       }
 
     </style>
@@ -155,7 +162,9 @@
         </ul>
       </div>
     </div>
+
     <section id="map"></section>
+    <a id="result" name="result"></a>
     <div id="footer">
     </div>    
     <script>
@@ -199,13 +208,15 @@
             {
               infoWindow = new google.maps.InfoWindow(
                 {
-                  content: rooms[userinput.toLowerCase()].content,
+                  content: rooms[userinput.toLowerCase()].title,
                   maxWidth: 150
                 });
               infoWindow.open(map, rooms[userinput.toLowerCase()])
               console.log("Something was found, its :" +found);
               DoMove(found.position);
               document.getElementById("room").value = "";
+              document.getElementById("result").innerHTML = rooms[userinput.toLowerCase()].content;
+              window.scrollTo(0,window.screen.height);
             }
             else
             {
