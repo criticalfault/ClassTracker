@@ -130,7 +130,7 @@
 
       img
       {
-        width: 80%;
+        width: 90%;
         height: 60%;
       }
 
@@ -173,7 +173,11 @@
         var map;
         var rooms;
         var infoWindow;
+        var marker;
+
+
         
+
         function PressEnter(e)
         {
             if(e.keyCode === 13)
@@ -182,6 +186,7 @@
             }
             return false;
         }
+
 
 
         function GoBuildA()
@@ -215,7 +220,7 @@
               console.log("Something was found, its :" +found);
               DoMove(found.position);
               document.getElementById("room").value = "";
-              document.getElementById("result").innerHTML = rooms[userinput.toLowerCase()].content;
+              document.getElementById("result").innerHTML = "<h1>Results</h1>" + rooms[userinput.toLowerCase()].content;
               window.scrollTo(0,window.screen.height);
             }
             else
@@ -252,6 +257,7 @@
 
 
         rooms = {
+         
 
           "fs4g-103" : new google.maps.Marker({
         position: {lat: 28.590308, lng: -81.305318},
@@ -398,8 +404,7 @@
          };
 
 
-        
-
+         /*
 
          rooms["fs4g-101"].addListener('click' ,function() 
          {
@@ -472,8 +477,11 @@
             console.log("pop");
             infoWindow.open(map, rooms["fs4a-139"]);
          });
+        */
 
 
+
+        
         }
 
 
