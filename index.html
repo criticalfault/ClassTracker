@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW_OX2owEVtGrcTZBu0UmeK8xdJg_turk&callback=initMap">
+    </script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+	<script type="text/javascript" src="js/main.js"></script>
+	<title>Class Finder</title>
+</head>
+<body>
+	<header>
+		<div class="contain">
+			<img src="assets/logo.svg">
+			<ul>
+				<a href="#"><li>Degree Programs</li></a>
+				<a href="#"><li>Admissions</li></a>
+			 	<a href="#"><li>We’re Different</li></a>
+			 	<a href="#"><li>Campus &amp; Online </li></a>
+			 	<a href="#"><li>About</li></a>
+			 	<a href="#"><li>Maps</li></a>
+			 </ul>
+		 </div>
+	</header>
+	<main>
+		<div class="contain">
+			<h1>Campus Map</h1>		
+			<form id='form'>
+				<p>Looking for a room?</p>
+				<label for="room">
+		        <input type="text" list="history" name="room" id="room" onkeypress="PressEnter(event)" autofocus>
+		        <datalist id="history">
+		            <option value="FS4A-102"/>
+		            <option value="FS4A-103"/>
+		            <option value="FS4A-106"/>
+		            <option value="FS4A-108"/>
+		            <option value="FS4A-135"/>
+		            <option value="FS4A-138"/>
+		            <option value="FS4A-139"/>
+		            <option value="FS4G-101"/>
+		            <option value="FS4G-103"/>
+		        </datalist>
+		        <button id="click">GO!</button>
+		      </label>
+		      <p id="tip">*Tip: Enter room numbers exactly how found on schedule!</p>
+	      	</form>
+
+			
+		<p>Not sure what room to look for? Check your Schedule <a id="schoolLink" href="https://mystuff.fullsail.edu/index.cfm?action=schedule">here</a></p>
+		<section id="map" style="border: solid 1px gray; height:600px; margin: 0 auto;"></section>
+		</div>
+	</main>
+	<footer>
+	</footer>	
+</body>
+</html>

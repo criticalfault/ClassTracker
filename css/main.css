@@ -1,0 +1,134 @@
+body, html
+{
+	margin: 0;
+	font-family: "Open Sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+
+
+#firstHeading
+{
+	font-size: 30px;
+}
+
+#bodyContent p 
+{
+	font-size: 16px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#bodyContent img
+{
+	margin-bottom: 20px;
+}
+
+header
+{
+	color: #505050;
+	width: 100%;
+	padding: 30px 0;
+	overflow: hidden;
+	border-bottom: solid 1px grey;
+}
+
+a, a:visited
+{
+	color: black;
+}
+
+a:hover
+{
+	color: #fdb913;
+}
+
+header img
+{
+	margin-left: 0;
+	margin-top: 10px;
+	height: 26px;
+	width: 214.438px;
+	float: left;
+}
+
+header ul li
+{
+	float: left;
+	text-align: center;
+	margin: 0 10px;
+	line-height: 50px;
+}
+
+header ul
+{
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+main
+{
+	background-color: #F9F5EB;
+	padding: 10px;
+}
+
+form
+{
+	text-align: center;
+}
+
+button
+{
+	background-color: #FDB913;
+	color: white;
+	border-radius: 5px;
+	width: 35px;
+	height: 30px;
+}
+
+
+
+img
+{
+	width: 100%;
+}
+
+p
+{
+	font-size: 30px;
+}
+
+h1
+{
+	font-family: 'Cutive Mono', monospace;
+	font-size: 70px;
+	margin: 0px;
+}
+
+#tip
+{
+	font-size: 14px;
+}
+
+input
+{
+	width: 70%;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	font-size: 20px;
+	line-height: 15px;
+	padding: 3px;
+}
+
+.contain
+{
+	width: 85%;
+	margin: 0 auto;
+}
+
+#schoolLink
+{
+	color: #FDB913;
+}
