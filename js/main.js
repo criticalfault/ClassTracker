@@ -119,7 +119,7 @@ function initMap()
 
   $.ajax(
   {
-    url: "http://api.sunrise-sunset.org/json?lat=28.590308&lng=-81.305318&date=today",
+    url: "https://api.sunrise-sunset.org/json?lat=28.590308&lng=-81.305318&date=today",
     context: document.body
   })
   .done(function(event) 
