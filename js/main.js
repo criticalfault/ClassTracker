@@ -2,12 +2,6 @@ var rooms = [];
 var pin;
 var night = false;
 var info;
-var small_red = new Image();
-
-small_red.src = '/assets/maptest1.png';
-
-
-
 
 window.addEventListener("load",function()
 {
@@ -44,7 +38,6 @@ function DoSearch()
 
     for(var i=0; i<rooms.length;i++)
     {
-      console.log(rooms[i]);
       if(rooms[i][userinput])
       {
         found = rooms[i][userinput];
@@ -116,28 +109,6 @@ function DoMove(pos)
 function initMap() 
 {
   var style = [];
-
-  $.ajax(
-  {
-    url: "https://api.sunrise-sunset.org/json?lat=28.590308&lng=-81.305318&date=today",
-    context: document.body
-  })
-  .done(function(event) 
-  {
-    var current = new Date(Date.now());
-    var sunset  = new Date(Date.parse("01/01/2011 " + event.results.sunset));
-    if(current.getHours() > sunset.getHours())
-    {
-
-      night = true;
-    }
-    else
-    {
- 
-      night = false;
-    }
-
-
     rooms = [{
         "fs4g-103" : new google.maps.Marker({
         position: {lat: 28.590308, lng: -81.305318},      
@@ -282,124 +253,6 @@ function initMap()
           '</div>'+
           '</div>'})}
          ];
-
-  });
-
-  if(night == true)
-  {
-    style = [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-            {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#746855'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
-            },
-            {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
-            },
-            {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
-            }
-          ];        
-  }
-  else
-  {
-    style = [
-              {
-                "featureType": "poi.park",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi.park",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi.park",
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              }
-            ];
-  }
 
 
 	map = new google.maps.Map(document.getElementById('map'), 
