@@ -1,10 +1,10 @@
-#ClassTracker
+# ClassTracker
 ------------------------
 
 
-#CodeShip + Heroku
+# CodeShip + Heroku
 
-##Installation
+## Installation
 
 Installation comes in three parts...
 
@@ -12,13 +12,13 @@ Installation comes in three parts...
 1. Staging on Heroku
 1. Production on Heroku
 
-###Setting up CodeShip
+### Setting up CodeShip
 
-####Getting an Account
+#### Getting an Account
 
 First you need to get an account on _www.Codeship.com_. Once you have registered, you can click on the menu above and click, 'Create a new project'
 
-####Linking a Repository
+#### Linking a Repository
 You will be given three options to link your code repository. _Github_, _BitBucket_, _Gitlab_. 
 
 ![Imgur](http://i.imgur.com/rr3R2qq.png)
@@ -39,7 +39,7 @@ Finalize with writing the commands required to run your tests!
 
 After you have completed this final test commands. It will require you to make a push to the repository you have configured. This will then accept in your push, download that repository on to _CodeShip_ and run your unit test. After completion, if its gets a green light (Your tests succeed) then it will fire off the deployment plan you will be prompted to establish.
 
-####Project Settings
+#### Project Settings
 
 After your successful push (Continue to retry after making modifications to your code so your tests succeed). You can setup a deployment pipeline to have _CodeShip_ push your code to a remote server. This requires you to add _CodeShips_ SSH Key to the ```~/.ssh/authorized_keys``` file. This key can be found under the general tab of project settings.
 
@@ -63,7 +63,7 @@ Click on Heroku for deployment and fill in your information
 
 Once your setup with your API key and you know what your application is called and where it will be stored, you need only to setup the pipeline. 
 
-###Establishing Heroku Pipelines
+### Establishing Heroku Pipelines
 
 
 1) Head over to Heroku and log in on their front page. This will take you to their dashboard. You will see your application you created already on the server. This application will be blank so far because we haven't actually pushed anything to Heroku yet.
@@ -87,6 +87,6 @@ You will see a "new" dropdown on the right-hand side. Click that and click creat
 For the Production line, simply follow the previous instructions on how to add an application and add the second to the pipeline. It will place it on the pipeline. You can then move them around to decide which one is Staging and which one will be Production. Should you add three, one will become the Development server. You can also add then multiple staging, development, production servers.
 
 
-##Execution
+## Execution
 
 Every push that hits the master branch, will go to CodeShip. Once CodeShip passes through it's tests, it will then be pushed to the staging server on Heroku. When pushing to Production, you will need to simple log into Heroku to push from the staging server to production!
